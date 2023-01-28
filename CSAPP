@@ -3,4 +3,9 @@
 - Hexadecimal number utilize:   FFFA H   in this H means Hex
 - so if a decimal 888, when it turns into hex would be:  (8\*16\*16 + 8\*16 + 8)
 ## Programs are translated by other programs into different Form
-- 
+
+- Compilation System contains:
+preprocessor（cpp）, compiler, assembleer, linker
+- GNU project includes: EMACS editor, GCC compiler, GDB debugger, assembler, linker, 
+utilities for manipulating binaries, and other components.
+- GNU supported languages include C, C++, Fortran, Java ,Pasca, Objective-C and Ada
