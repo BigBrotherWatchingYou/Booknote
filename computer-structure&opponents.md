@@ -10,19 +10,19 @@ CPU will follow PC's command, reading the first instruction (Fetch instruction)
 it can always reach the next intruction's address
 3. Beacause of the mostly instruction were executed in order, the rewrite process usually runs like (PC = PC +1)
 4. when it comes to a transfer instruction, the instruction result is to change the value of PC(turns to the aimed address)
-5. Thus, CPU always following the PC's command, (fetching instructions, compiling code, executing) and based on it , the program
+5. Thus , CPU always following the PC's command, (fetching instructions, compiling code, executing) and based on it , the program
 transfer was accomplished.
 
 # Hardware
 ## CPU and Memory
-- while a program is running, CPU needs to get instructions from Memory, analyse and execute. 
-- this was based on 'Different section of the Instruction Cycle', which was stored in memory using binary code.
+- while a program is running , CPU needs to get instructions from Memory, analyse and execute. 
+- this was based on 'Different section of the Instruction Cycle' , which was stored in memory using binary code.
 
 # Hardware
 ## Input/Output
 - controlling ways between computer and peripherals: Process Control, Interrupt(break), DMA(Direct memory access)
 - Process control: CPU executing process controls the Input/Output process
-- Interrupt(break):device send CPU a "break request signal", when CPU respond, it will stop the executing task and 
+- Interrupt(break):device send CPU a "break request signal" , when CPU respond, it will stop the executing task and 
 run the device's request. When it was done, CPU turns back to its work.
 - DMA(direct memory access) : CPU send order to DMA controller and let it handle the Data transportation, and
 send back the information to CPU( this can greatly reduce occupation of CPU and save resourses)
@@ -45,7 +45,7 @@ send back the information to CPU( this can greatly reduce occupation of CPU and 
 - we usually call 16bit= 1 word
 - Word Length means the bits that CPU can handle at a same time
 - the longer the Word Length, the more effective
-- FOR EXAMPLE: if a memory has a 4GB capacity, and a 32-bit Word Length, then :
+- FOR EXAMPLE: if a memory has a 4GB capacity, and a 32-bit Word Length , then :
 the width of AB and DB is 32-bit
 
 ### Data bus (DB)
@@ -58,11 +58,21 @@ the width of AB and DB is 32-bit
 - Control Bus is a bunch of different control lines
 ## VLIW:(Very Long Instruction Word) 
 - a group of instructions, it links many instructions together, which speed up calculation
-------------------------
--------------------------
-----------this part still needs improvement-------2023-1-28-----
-
+- binary
+- transfer control signals and timing signals to device in the proximity
+- (Base on data transformation)could be divinded into serial bus/parallel bus
+- (Base on whether the timing signal is independent) : synchronous bus/asynchronous bus### serial bus
+- only one line(high efficiency)
+### parallel bus
+- all line transport at the same time(which lead to interupttion, low efficiency)
+### synchronous bus
+- connectted device synchronize using the same clock(working in the same scheule)
+### asynchronous bus
+- no united clock, different scheule(which means higher completibility, for example Firewire or IEEE1394\USB 2.0)
 
 # System
 ## DMA(Direct memory access)
+- transfer a address value to another place
+- dont't need CPU controllment
+- using hardware to open a tunnel for RAM and I/O device(which makes CPU more effective)
 - 
