@@ -10,7 +10,7 @@ CPU will follow PC's command, reading the first instruction (Fetch instruction)
 it can always reach the next intruction's address
 3. Beacause of the mostly instruction were executed in order, the rewrite process usually runs like (PC = PC +1)
 4. when it comes to a transfer instruction, the instruction result is to change the value of PC(turns to the aimed address)
-5. Thus , CPU always following the PC's command, (fetching instructions, compiling code, executing) and based on it , the program
+5. Thus, CPU always following the PC's command, (fetching instructions, compiling code, executing) and based on it , the program
 transfer was accomplished.
 
 # Hardware
@@ -76,3 +76,14 @@ the width of AB and DB is 32-bit
 - dont't need CPU controllment
 - using hardware to open a tunnel for RAM and I/O device(which makes CPU more effective)
 - 
+
+# CISC and RISC
+## CISC
+- CISC (Complex instruction set computer)
+- Main: enhance function of ordinary instuctions, use instuctions o higher complexity to replace functions that were used to run by software programmm(which makes software functions more "hardwarelize")
+- usually contains more than 3,000 instructions
+## RISC
+- RISC(reduced instructions set computer)
+- Main: decreace the hardware's complexity by simplifying instructions, in order to run instructions in a single cycle
+- speed up executive speed by optimizing compliation
+- uses hardwires logic controllment
