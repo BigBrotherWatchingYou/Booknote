@@ -20,6 +20,13 @@ transfer was accomplished.
 
 # Hardware
 ## Input/Output
+### Input/Output Devices definition
+- system's connection to the external world
+- Each I/O device connected to the I/O bus either by an adapter or a controller
+- Controllers are chipsets in the device itself or on the system's main printed circuit board (often called
+the motherboard).
+- An adapter is a card that plugs into a slot on th emotherboard
+- both of them are to transfer information back and forth between the I/O bus and an I/O device
 - controlling ways between computer and peripherals: Process Control, Interrupt(break), DMA(Direct memory access)
 - Process control: CPU executing process controls the Input/Output process
 - Interrupt(break):device send CPU a "break request signal" , when CPU respond, it will stop the executing task and 
@@ -87,3 +94,4 @@ the width of AB and DB is 32-bit
 - Main: decreace the hardware's complexity by simplifying instructions, in order to run instructions in a single cycle
 - speed up executive speed by optimizing compliation
 - uses hardwires logic controllment
+
