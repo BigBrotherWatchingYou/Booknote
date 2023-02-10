@@ -1,6 +1,19 @@
 # Hardware
 ## CPU structure
-###Programm Counter(PC)  or Instruction Counter
+### Computer running process
+1. programm was loaded into memory
+2. when CPU execute a instruction, it will be sent into Buffer Register, then into IR(instruction register)
+3. Instruction Decoder will genereate Operand based on IR's content
+
+
+
+## IR( Instruction Register)
+- temporary store instructions from memory(unaccessable, invisible)
+
+## MDR (Memory Data Register)
+- 
+
+### Programm Counter(PC)  or Instruction Counter
 - It determins where the program is heading
 - It store instruction address in memory 
 - PC can store 'instruction address' and temporary store 'arithmetical/logical calculation result'
@@ -12,6 +25,34 @@ it can always reach the next intruction's address
 4. when it comes to a transfer instruction, the instruction result is to change the value of PC(turns to the aimed address)
 5. Thus, CPU always following the PC's command, (fetching instructions, compiling code, executing) and based on it , the program
 transfer was accomplished.
+### Programm Counter function
+1. store info
+2. count
+#### PC process
+- before execution: origin address was sent into PC
+- executing: CPU will modify PC's content automatically, so that it can always reach next instruction's address
+- modify process: mostly just +1
+- Programmer can access PC while compilng program
+
+
+## Memory and storage
+## Memory
+- Memory are usually consist of DRAM
+### SRAM
+- usually used as Cache
+- faster than DRAM, but more expensive
+### DRAM
+- usually used as buffer zone for memory and graphic system
+- need periodically recharge and refresh to keep info
+### EEPROM
+- electronic erasable programable read only memory
+### external memory
+- Harddisk.etc
+### internal memory
+
+#### associative memory
+- access data base on content
+
 
 # Hardware
 ## CPU and Memory
@@ -55,6 +96,8 @@ send back the information to CPU( this can greatly reduce occupation of CPU and 
 - FOR EXAMPLE: if a memory has a 4GB capacity, and a 32-bit Word Length , then :
 the width of AB and DB is 32-bit
 
+## Bus
+- using Bus structure in computer system makes it easier to unitilize, and reduce  quantity of info-transport-line.
 ### Data bus (DB)
 1. transport CPU data to Storage or I/O.etc  (and vice versa)
 2. the width of
@@ -82,16 +125,78 @@ the width of AB and DB is 32-bit
 - transfer a address value to another place
 - dont't need CPU controllment
 - using hardware to open a tunnel for RAM and I/O device(which makes CPU more effective)
-- 
+- which means DMA connect directly Memory and I/O device
 
 # CISC and RISC
 ## CISC
 - CISC (Complex instruction set computer)
 - Main: enhance function of ordinary instuctions, use instuctions o higher complexity to replace functions that were used to run by software programmm(which makes software functions more "hardwarelize")
 - usually contains more than 3,000 instructions
+- has many restrictions when executing streamline
+### CISC feature
+- instruction length under CISC frame are usually variable, and has a large variety forms
+- instructions usually needs multiple cycle to finish
+- about 20% instructions will are frequently used, the rest 80% usually won't be used(which is unreasonable)
 ## RISC
 - RISC(reduced instructions set computer)
 - Main: decreace the hardware's complexity by simplifying instructions, in order to run instructions in a single cycle
 - speed up executive speed by optimizing compliation
 - uses hardwires logic controllment
+### RISC feature
+- RISC
+- Instructions are usually in solid(speified)format and length
+- addressing mode are simple, most instructions can be done in one cycle
+- suitable for streamline
+- only load/store instuction can access memory
+- data handling instructions onl operate content in register
+- in order to boost calculation, RISC will set multiple register, and desinate register for special purpose
+- CISC allow data-handling-instructions operate memory, don't need so much register
 
+
+## General Purpose register
+- CPU access speed ranking: General Purpose register > Cache > Memory > Disk
+
+## address mapping
+### Fully associative addresss mapping
+- chunk in mian memory can be place in anywhere in cache
+- minimum chunk conflicts among the three mapping ways
+### Direct associative mapping
+- (chunk number in main memory)/cache groups=chunk position in cache
+### Group associative mapping
+- chunk number/ cache groups= chunk groups in cache(in this group chunk can be placed anywhere)
+## How does address mapping works?
+
+--------theory waiting to fufill--------------
+
+
+## System Reliability
+![1](assets/system_reliability.jpg)
+- if module reliability 1,2,3, are :0.90; 0.80; 0.80
+- and you want the whole reliabiity is 0.85
+- then module 4 's reliability should be at least:
+- 0.85/(0.9*(1-0.8)*(1-0.8))
+
+## Breakpoint
+### Impact:
+- Breakpoint makes computer able to react with accidents
+- Increase CPU's efficiency
+- If there's no breakpoint and meet a accident, CPU can only follow the program, require and handle all device(low efficiency)
+### external interrupt
+- interrupt caused by external device, can be divided into Maskable/nonMaskable interruption
+#### Maskable interrupt
+- interrupt request sent by external device that can set breakpoint
+#### non-Maskable interrupt
+- interrupt by software's breakpoint and 'error' when executing instructions(including overflow\ zero division)
+### Definition
+- accident occurs when CPU executing programm, that CPU has to stop running the current program, and handle another programm to deal with the accident.
+- When the Accident was done, CPU returns to run the origin paused program
+### Multiple breakpoint
+- there are two ways dealing with multiple breakpoint
+1.  while dealing with a breakpoint, ban other interrupt request
+2.  concern about the priority of the breakpoints: allow higher-priority breakpoint interrupt a lower one; return to the lower when the higher one is done
+
+# Chip, Capacity and address space
+- if a storage (16K *8 bit, address space: 000H~3FFFH) was organized by chips(2K*4), then it needs 16 chips(16K*8/(2K*4))
+- The storage(16K*8) means address space was divided into 8 part, each part(3FFF+1=4000)/8= 4*16^3)/8=8*16^2=800H
+- each part: 0000H~0777FH, 0800H~0FFFH, 1000H~17FFFH
+- for example: address unit: 0B1FH is in 0800H~0FFFH
