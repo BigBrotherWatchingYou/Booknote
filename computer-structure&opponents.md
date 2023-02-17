@@ -200,3 +200,25 @@ the width of AB and DB is 32-bit
 - The storage(16K*8) means address space was divided into 8 part, each part(3FFF+1=4000)/8= 4*16^3)/8=8*16^2=800H
 - each part: 0000H~0777FH, 0800H~0FFFH, 1000H~17FFFH
 - for example: address unit: 0B1FH is in 0800H~0FFFH
+
+# Flynn
+- Definition: a classification of computer system structure
+1. Instruction Stream
+2. Data Stream
+3. Multiplicity
+## SISD 
+- (Single instruction single datasteram)
+- CANNOT concurrent compating
+- ONLY serial computing
+## SIMD 
+- single instruction multiple datastream
+- using one instuction-stream handle multiple data-stream
+- useful in digital signal\graphics\multimedia
+## MISD
+- multiple instruction single datastream
+- ONLY theoratical Model
+- DO NOT exist
+## MIMD 
+- multiple instruction multiple datastream
+- these instructions handle different data-stream
+- FOR EXAMPLE: AMD CPU
