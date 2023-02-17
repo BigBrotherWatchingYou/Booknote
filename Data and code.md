@@ -49,7 +49,14 @@
 ## Hamming code
 - add k checking number in data
 - if data has 48 numbers, k should be (2^k -1 >=k+ n)
------------- too complex, won't decribe here  -------
+### Hamming code Verification
+- if a data got 10 bits 1111111111. each bit got a number, we called it 9876543210
+- then its hamming code should be: 9 8 7 6 5 4 (H4) 3 2 1 (H3) 0 (H2) (H1)
+- 9 was checked by H4、H3、H2(9 was at 14th of the code, 14=8+4+2）
+- 5 was checked by H4、H2( 5 was at 10th, 10= 8+2)
+- 4 was checked by H4、H1(4 at 9th, 9=8+1)
+- 
+------------ forming process too complex, won't decribe here  -------
 
 # Code
 ## reverse form
@@ -93,3 +100,46 @@ is residing.(operand in Memory unit)
 - data transportation ability
 - for example is a Bus got a 32bit width, 200Mhz clock rate,  every 5 cycles can transport 32bit
 - then this BUs got a (200Mhz/5) * (32bit/8=4byte)= 160Mbps
+
+# Streamline
+- already know, pass
+- using asynchronous control system WON'T enhance its efficiency
+- TO reach the highest efficiency, all part of streamline should take the same time to operate
+
+# Certificate Authority
+- character: CA, A, B
+- If B has applied a credential from CA, and A wants to verify it
+- then A needs the 'Public key' of CA to verify
+## example
+- IF A and B wants to communicate, A's letter has digital signature
+- When B receive the letter, B need to use A's public key to verify it
+## algorithm could be used on Certificate Authority
+- RSA are usually for signing abstracts.
+- IDEA and RC4 suitable for data transportation encrypting
+- MD5 for Abstract
+# Keys encryption
+- DES( data encryptiong standard) encryption algorithm that converts plain text into blocks then uses a key to convert it to ciphertext.
+
+
+
+## RC5
+### RC5 definition
+- a fast block cipher developed based on symmetric key encryption.
+- Feature: quite fast  (it uses only primitive computer operations)
+- allows a variable number of rounds and variable bit size key to add flexibility
+- requires less memory for execution, (which enables RC5 to be used for various purposes like desktop operation, smark cards.etc）
+### How does RC5 works?
+- in RC5 algorithm, the input 
+- key can be of variable length
+- Once the values are decided, the values will remain the same for a particular execution of the Cryptographic algorithm
+- In RC5, the plain text message is divided into two blocks A and B each of 32 bits. Then two subkeys are generated 0 and 1. 
+- These subkeys are added into A and B respectively. This process produces C and D respectively and marks the end of the One-Time Operation.
+- Then the process of the round begins. In each round, the following operation is performed:
+- Bitwise XOR
+- Left circular shift
+- addition to the next subkey, for both C and D. This, is the addition operation, and then the result of the addition mod is 2^w is performed
+- -------very complex, only need to know definition-------------------
+
+
+## IDEA
+- AES
