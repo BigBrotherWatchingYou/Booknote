@@ -1,3 +1,4 @@
+
 ### Memory unit format
 - example: if a memory unit is adressing by bit, then  adress( 0000A000H ~ 0000BFFFH) has: 1FFFH(BFFFH - A000H + 1 = 2000H), which is 8k(8*1024) store unit
 
@@ -119,18 +120,19 @@ is residing.(operand in Memory unit)
 - MD5 for Abstract
 # Keys encryption
 - DES( data encryptiong standard) encryption algorithm that converts plain text into blocks then uses a key to convert it to ciphertext.
+# PKI(Public Key Infrastructure)
+- To secure the CA not to be modified and sent to the owner, need to use  **CA's private key** for signature.
 
-
-
+# Encryption
 ## RC5
 ### RC5 definition
 - a fast block cipher developed based on symmetric key encryption.
-- Feature: quite fast  (it uses only primitive computer operations)
+- **Feature: quite fast**  (it uses only primitive computer operations)
+- <font color=red>which means it's suitable for numerous text encryption</font>
 - allows a variable number of rounds and variable bit size key to add flexibility
-- requires less memory for execution, (which enables RC5 to be used for various purposes like desktop operation, smark cards.etc）
+- _**requires less memory for execution**_, (which enables RC5 to be used for various purposes like desktop operation, smark cards.etc）
 ### How does RC5 works?
-- in RC5 algorithm, the input 
-- key can be of variable length
+- in RC5 algorithm, the input key can be of variable length
 - Once the values are decided, the values will remain the same for a particular execution of the Cryptographic algorithm
 - In RC5, the plain text message is divided into two blocks A and B each of 32 bits. Then two subkeys are generated 0 and 1. 
 - These subkeys are added into A and B respectively. This process produces C and D respectively and marks the end of the One-Time Operation.
