@@ -73,7 +73,13 @@
 - maximum: 63(2^6-1)
 ### Why use complement Form
 - when showing data in complement form, positive/negative and other bits can be handled together(minus can be handled as plus), in order to simplify the structure design
-
+### EXAMPLE
+- If a code's ***complement*** form is FFFFH, then it's ***Origin code*** should be:
+1. complement's complement is the origin
+2. FFFFH= 1111 1111 1111 1111
+3. reverse= 1000 0000 0000 0000
+4. reverse+compliment= 1000 0000 0000 0001
+5. so it's origin form is: -1
 
 # Spatial locality
 - Definition: All those instruction which are stored nearby to the recently executed instruction have high chances of execution.
@@ -108,16 +114,20 @@ is residing.(operand in Memory unit)
 - TO reach the highest efficiency, all part of streamline should take the same time to operate
 
 # Certificate Authority
+## CA algorithm
+- ECC(Elliptic Curve Cryptography), EIGamal, Rabin, DSA,RSA. (No DES, DES is for private key encryption)
 - character: CA, A, B
 - If B has applied a credential from CA, and A wants to verify it
 - then A needs the 'Public key' of CA to verify
 ## example
-- IF A and B wants to communicate, A's letter has digital signature
-- When B receive the letter, B need to use A's public key to verify it
+1. IF A and B wants to communicate, A's letter has digital signature
+When B receive the letter, B need to use A's public key to verify it
+2. If a website apply for a CA, then Users should verify through **signature of CA**   
+3. CA sign with their ***CA's private key*** .
 ## algorithm could be used on Certificate Authority
 - RSA are usually for signing abstracts.
 - IDEA and RC4 suitable for data transportation encrypting
-- MD5 for Abstract
+- MD5 is algorithm for Abstract
 # Keys encryption
 - DES( data encryptiong standard) encryption algorithm that converts plain text into blocks then uses a key to convert it to ciphertext.
 # PKI(Public Key Infrastructure)
@@ -145,3 +155,14 @@ is residing.(operand in Memory unit)
 
 ## IDEA
 - AES
+
+# Identity Verification
+- Windows IIS service provide 4 ways of identity verification
+1. .NET Passport verification
+- request to IIS ust be effective while checking string of cookie
+2. windows verification
+- send user the verify message in Kerberos tickets(5NTLM) form
+1. abstract verification
+   - use MD5 Hash or abstract to transfer the identity information in Internet
+2. basic identity verification
+   - no encryption transfer
