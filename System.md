@@ -32,12 +32,21 @@
 
 
 # Certificate security
-
-
-
-
-
-
-- HTTPS
+1.HTTPS
+- HTTP（safe）
 - PGP
 - MIME: has nothing to do with security, it's just a standard 
+
+# Cyber Attack
+1. Replay attacks/ Freshness Attack
+- attacker send the targeted a pack (that already received before) to deceive the system
+- mainly used for identity verification
+- Kerberos system use "time stamp"to prevent
+
+# Input/Output
+## running process (step)
+1. hardware (executing I/O operand) 
+2. interruppt handler(revoke ***Device Driver*** when the I/O is finished)
+3. device driver (set device register, check condition)
+4. other software (named\protet\clog\buffer\allocate)
+5. user process(use I/O , formatting I/O, spooling )
